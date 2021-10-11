@@ -13,7 +13,7 @@ class SHA256Hasher implements HasherContract
 
     public function make($value, array $options = [])
     {
-	$salt = isset($options['salt']) ? $options['salt'];
+        $salt = isset($options['salt']) ? $options['salt'] : '';
 	    
         $hash = hash('sha256', $value . $salt);
         return $hash;
@@ -21,7 +21,7 @@ class SHA256Hasher implements HasherContract
 
     public function check($value, $hashedValue, array $options = [])
     {
-	$salt = isset($options['salt']) ? $options['salt'];
+	$salt = isset($options['salt']) ? $options['salt'] : '';
 
         if (strlen($hashedValue) === 0) {
             return false;
