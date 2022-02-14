@@ -1,4 +1,5 @@
 <?php
+
 namespace Cryental\LaravelHashingSHA256;
 
 use Illuminate\Support\ServiceProvider;
